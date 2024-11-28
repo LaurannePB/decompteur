@@ -1,8 +1,21 @@
-body {
-  margin: 0;
-  padding: 0;
-  background: #fff;
-  color: #333;
-  font-size: 15px;
-  line-height: 19px;
+$main_primary_color: #f4c60b;
+$lighter_primary_color: #f8dc69;
+$main_secondary_color: #8a63e7;
+$lighter_secondary_color: #bfaaf2;
+$main_ternary_color: #92ba33;
+$lighter_ternary_color: #add157;
+$content_background_color: rgba(255, 255, 255, 0.7);
+$main_font_color: #333;
+
+@mixin title_font {
+  font-family: "Caveat Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+}
+
+@mixin main_font {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
