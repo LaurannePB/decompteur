@@ -28,11 +28,9 @@ class Image
 
     #[ORM\Column(type: Types::SMALLINT)]
     private ?int $category_id;
-    private ?Category $category;
 
     #[ORM\Column(type: Types::SMALLINT)]
     private ?int $status_id;
-    private ?Status $status;
 
     #[ORM\Column]
     private ?DateTime $creation_date;
@@ -103,14 +101,6 @@ class Image
     }
 
     /**
-     * @return int|null
-     */
-    public function get_category_id(): ?int
-    {
-        return $this->category_id;
-    }
-
-    /**
      * @param int|null $category_id
      */
     public function set_category_id(?int $category_id): void
@@ -123,23 +113,7 @@ class Image
      */
     public function get_category(): ?Category
     {
-        return $this->category;
-    }
-
-    /**
-     * @param Category|null $category
-     */
-    public function set_category(?Category $category): void
-    {
-        $this->category = $category;
-    }
-
-    /**
-     * @return int|null
-     */
-    public function get_status_id(): ?int
-    {
-        return $this->status_id;
+        return Category::tryFrom($this->category_id ?? -1);
     }
 
     /**
@@ -155,15 +129,7 @@ class Image
      */
     public function get_status(): ?Status
     {
-        return $this->status;
-    }
-
-    /**
-     * @param Status|null $status
-     */
-    public function set_status(?Status $status): void
-    {
-        $this->status = $status;
+        return Status::tryFrom($this->status_id ?? -1);
     }
 
     /**
