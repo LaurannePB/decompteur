@@ -12,8 +12,8 @@
 
         <nav id="main-nav">
             <ul>
-                <li><i class="ri-timer-fill"></i> <a href="/project">This project</a></li>
-                <li><i class="ri-timer-fill"></i> <a href="/lauranne">Who am I?</a></li>
+                <li><i class="ri-timer-fill"></i> <a href="{{ path('app_information_project') }}">This project</a></li>
+                <li><i class="ri-timer-fill"></i> <a href="{{ path('app_information_me') }}">Who am I?</a></li>
                 <li><i class="ri-timer-fill"></i> <a href="/contribute">Contribute</a></li>
             </ul>
         </nav>
@@ -25,7 +25,7 @@
         <div id="footer-content">
             <a href="{{ path('app_legal_legal') }}">Legal notices</a> -
             <a href="{{ path('app_legal_confidentiality') }}">Confidentiality</a> -
-            <a href="/legal">Contact</a> -
+            <a href="{{ path('app_information_contact') }}">Contact</a> -
             <a href="https://github.com/LaurannePB" target="_blank"><i class="ri-github-fill"></i> Github</a>
         </div>
     </footer>
