@@ -10,7 +10,7 @@ enum Status: int
     /**
      * @return string
      */
-    public function get_label(): string
+    public function getLabel(): string
     {
         return match ($this)
         {

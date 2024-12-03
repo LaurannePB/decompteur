@@ -18,12 +18,12 @@ class AppFixtures extends Fixture
             $category = ($i <= 5) ? Category::MOTIVATION : (($i <= 10) ? Category::HELP : Category::CAT);
 
             $image = new Image();
-            $image->set_author('Lauranne');
-            $image->set_category_id($category->value);
-            $image->set_creation_date(new DateTime());
-            $image->set_status_id(Status::VALIDATED->value);
-            $image->set_source_url('http://google.com');
-            $image->set_file_name($i . '.png');
+            $image->setAuthor('Lauranne');
+            $image->setCategoryId($category->value);
+            $image->setCreationDate(new DateTime());
+            $image->setStatusId(Status::VALIDATED->value);
+            $image->setSourceUrl('http://google.com');
+            $image->setFileName($i . '.png');
             $manager->persist($image);
         }
 

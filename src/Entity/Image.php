@@ -18,27 +18,27 @@ class Image
     private ?int $id;
 
     #[ORM\Column(length: 255)]
-    private ?string $file_name;
+    private ?string $fileName;
 
     #[ORM\Column(length: 50)]
     private ?string $author;
 
     #[ORM\Column(length: 255)]
-    private ?string $source_url;
+    private ?string $sourceUrl;
 
     #[ORM\Column(type: Types::SMALLINT)]
-    private ?int $category_id;
+    private ?int $categoryId;
 
     #[ORM\Column(type: Types::SMALLINT)]
-    private ?int $status_id;
+    private ?int $statusId;
 
     #[ORM\Column]
-    private ?DateTime $creation_date;
+    private ?DateTime $creationDate;
 
     /**
      * @return int|null
      */
-    public function get_id(): ?int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -47,7 +47,7 @@ class Image
      * @param int|null $id
      * @return void
      */
-    public function set_id(?int $id): void
+    public function setId(?int $id): void
     {
         $this->id = $id;
     }
@@ -55,23 +55,23 @@ class Image
     /**
      * @return string|null
      */
-    public function get_file_name(): ?string
+    public function getFileName(): ?string
     {
-        return $this->file_name;
+        return $this->fileName;
     }
 
     /**
-     * @param string|null $file_name
+     * @param string|null $fileName
      */
-    public function set_file_name(?string $file_name): void
+    public function setFileName(?string $fileName): void
     {
-        $this->file_name = $file_name;
+        $this->fileName = $fileName;
     }
 
     /**
      * @return string|null
      */
-    public function get_author(): ?string
+    public function getAuthor(): ?string
     {
         return $this->author;
     }
@@ -79,7 +79,7 @@ class Image
     /**
      * @param string|null $author
      */
-    public function set_author(?string $author): void
+    public function setAuthor(?string $author): void
     {
         $this->author = $author;
     }
@@ -87,65 +87,65 @@ class Image
     /**
      * @return string|null
      */
-    public function get_source_url(): ?string
+    public function getSourceUrl(): ?string
     {
-        return $this->source_url;
+        return $this->sourceUrl;
     }
 
     /**
-     * @param string|null $source_url
+     * @param string|null $sourceUrl
      */
-    public function set_source_url(?string $source_url): void
+    public function setSourceUrl(?string $sourceUrl): void
     {
-        $this->source_url = $source_url;
+        $this->sourceUrl = $sourceUrl;
     }
 
     /**
-     * @param int|null $category_id
+     * @param int|null $categoryId
      */
-    public function set_category_id(?int $category_id): void
+    public function setCategoryId(?int $categoryId): void
     {
-        $this->category_id = $category_id;
+        $this->categoryId = $categoryId;
     }
 
     /**
      * @return Category|null
      */
-    public function get_category(): ?Category
+    public function getCategory(): ?Category
     {
-        return Category::tryFrom($this->category_id ?? -1);
+        return Category::tryFrom($this->categoryId ?? -1);
     }
 
     /**
-     * @param int|null $status_id
+     * @param int|null $statusId
      */
-    public function set_status_id(?int $status_id): void
+    public function setStatusId(?int $statusId): void
     {
-        $this->status_id = $status_id;
+        $this->statusId = $statusId;
     }
 
     /**
      * @return Status|null
      */
-    public function get_status(): ?Status
+    public function getStatus(): ?Status
     {
-        return Status::tryFrom($this->status_id ?? -1);
+        return Status::tryFrom($this->statusId ?? -1);
     }
 
     /**
      * @return DateTime|null
      */
-    public function get_creation_date(): ?DateTime
+    public function getCreationDate(): ?DateTime
     {
-        return $this->creation_date;
+        return $this->creationDate;
     }
 
     /**
-     * @param DateTime|null $creation_date
+     * @param DateTime|null $creationDate
      */
-    public function set_creation_date(?DateTime $creation_date): void
+    public function setCreationDate(?DateTime $creationDate): void
     {
-        $this->creation_date = $creation_date;
+        $this->creationDate = $creationDate;
     }
 
 

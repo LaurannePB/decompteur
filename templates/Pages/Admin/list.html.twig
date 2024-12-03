@@ -5,5 +5,29 @@
 {% block content %}
     <h1>List</h1>
     <a href="{{ path('app_admin_add') }}">+</a>
-    <p>Work in progress</p>
+    <table>
+        <thead>
+        <tr>
+            <th>File</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Creation date</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for image in images %}
+            <tr>
+                <td>{{ image.fileName }}</td>
+                <td>{{ image.author }}</td>
+                <td>{{ image.category.getLabel() }}</td>
+                <td>{{ image.status.getLabel() }}</td>
+                <td>{{ image.creationDate|date('d/m/Y') }}</td>
+                <td>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

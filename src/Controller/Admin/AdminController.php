@@ -2,6 +2,8 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Image;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -11,9 +13,13 @@ class AdminController extends AbstractController
 {
 
     #[Route('/', name: 'app_admin_list')]
-    public function list(): Response
+    public function list(EntityManagerInterface $entityManager): Response
     {
-        return $this->render('Pages/Admin/list.html.twig');
+        $images = $entityManager->getRepository(Image::class)->findAll();
+
+        return $this->render('Pages/Admin/list.html.twig', [
+            'images' => $images
+        ]);
     }
 
     #[Route('/add', name: 'app_admin_add')]
