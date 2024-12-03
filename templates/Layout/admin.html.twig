@@ -1,0 +1,20 @@
+{% extends 'Layout/base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/admin.css">
+{% endblock %}
+
+
+{% block body %}
+    <header>
+        <h1><a href='{{ path('app_admin_list') }}'><i class="ri-timer-fill"></i> Décompteur Admin</a></h1>
+        <a href="{{ path('app_home_index') }}" id="back-link">Back to site</a>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <div id="footer-content">
+        </div>
+    </footer>
+{% endblock %}

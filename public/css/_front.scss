@@ -2,19 +2,12 @@
 
 $menu-width: 260px;
 
-* {
-  box-sizing: border-box;
-}
-
 body {
-  margin: 0;
-  padding: 0;
   background: base.$main_primary_color;
   color: base.$main_font_color;
   font-size: 18px;
   line-height: 25px;
   @include base.main_font;
-  overflow: hidden;
 }
 
 header {

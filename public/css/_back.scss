@@ -1,0 +1,46 @@
+@use 'base' as base;
+
+$menu-width: 260px;
+
+
+body {
+  background: #fff;
+  color: base.$main_font_color;
+  font-size: 18px;
+  line-height: 25px;
+  @include base.main_font;
+}
+
+header {
+  position: relative;
+  background: base.$main_secondary_color;
+
+  h1 {
+    margin: 0;
+    padding: 0;
+
+    a {
+      display: block;
+      color: #fff;
+      @include base.title_font;
+      text-decoration: none;
+      font-size: 30px;
+      padding: 10px 15px;
+    }
+  }
+
+  #back-link {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    color:#fff;
+  }
+}
+
+
+main {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
