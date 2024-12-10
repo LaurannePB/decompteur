@@ -4,5 +4,8 @@
 
 {% block content %}
     <h1>Add an image</h1>
-    <p>Work in progress</p>
+    {{ form_start(form) }}
+    {{ form_rest(form) }}
+    <input type="submit">
+    {{ form_end(form) }}
 {% endblock %}
