@@ -25,6 +25,7 @@
                 <td>{{ image.status.getLabel() }}</td>
                 <td>{{ image.creationDate|date('d/m/Y') }}</td>
                 <td>
+                    <a href="{{ path('app_admin_delete', {'id': image.id}) }}"><i class="ri-delete-bin-fill"></i></a>
                 </td>
             </tr>
         {% endfor %}
